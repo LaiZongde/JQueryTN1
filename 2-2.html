@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>JQuery Mobile 多容器間的切換</title>
+    <style>
+
+        .s1{
+            background-color: aqua;
+        }
+        button{
+            width: 60px;
+            
+        }
+
+        @media only screen and (min-width: 375px){}
+        @media only screen and (min-width: 768px){}
+        @media only screen and (min-width: 1024px){}
+        @media only screen and (min-width: 1366px){}
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="s1"><h1>天氣預報</h1></div>
+        <div data-role="content">
+            <p><a href="#w1" data-transition="flip">今天</a>|<a href="#w2" data-transition="flip">明天</a></p>
+            <button type="reset" onclick="window.location.reload()" >重新整理</button>
+        </div>
+        <div data-role="footer" class="s1"><h4>2023 rttop.cn studio &copy;</h4></div>
+    </div>
+    <div data-role="page" id="w1" data-add-back-btn="ture" ><a href="#" data-transition="flip" class="s1"></a>
+        <div data-role="header" class="s1"><h1>今天天氣</h1></div>
+        <div data-role="content">
+            <p>4~-7℃<br>晴轉多雲<br>微風</p>
+        </div>
+        <div data-role="footer" class="s1"><h4>2023 rttop.cn studio &copy;</h4></div>
+    </div>
+    <div data-role="page" id="w2" data-add-back-btn="ture" ><a href="#" data-transition="flip" class="s1"></a>
+        <div data-role="header" class="s1"><h1>明天天氣</h1></div>
+        <div data-role="content">
+            <p>4~-7℃<br>晴轉多雲<br>微風</p>
+        </div>
+        <div data-role="footer" class="s1"><h4>2023 rttop.cn studio &copy;</h4></div>
+    </div>
+</body>
+</html>
